@@ -16,16 +16,21 @@ function lunchcontroller($scope)
 
 	function calcsize(string)
 	{
-		var cnt=1;
-		for (var i = 0; i < string.length; i++) 
+		if(string.length<1)
+			return "Please enter data first";
+		else
 		{
-			if(string.charAt(i)==",")
-				cnt+=1;
+			var cnt=1;
+			for (var i = 0; i < string.length; i++) 
+			{
+				if(string.charAt(i)==",")
+					cnt+=1;
+			}
+			if(cnt<=3)
+				return "Enjoy";
+			else if(cnt>3)
+				return "Too much!!!";
 		}
-		if(cnt<=3)
-			return "Enjoy";
-		else if(cnt>3)
-			return "Too much!!!";
 	}
 }
 })();
