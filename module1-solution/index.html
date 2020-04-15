@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="lunchapp">
+  <head>
+    <script src="angular.js"></script>
+    <script src="app1.js"></script>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body ng-controller='lunchcontroller'>
+   <div class="container">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input ng-model="name" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+             do not enter blank spaces
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="dispmsg();">Check If Too Much</button>
+         </div>
+         <div class="form-group message">
+           Message:- {{display}}
+         </div>
+   </div>
+
+</body>
+</html>
