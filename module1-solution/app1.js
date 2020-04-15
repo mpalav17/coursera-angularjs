@@ -16,7 +16,7 @@ function lunchcontroller($scope)
 
 	function calcsize(string)
 	{
-		if(string.length<1)
+		if(string=="list comma separated dishes you usually have for lunch"||string.length<1)
 			return "Please enter data first";
 		else
 		{
