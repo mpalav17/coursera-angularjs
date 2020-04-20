@@ -6,24 +6,24 @@
 	<script src="app.js"></script>
 </head>
 <body>
-<div ng-controller="ShoppingListController1 as ToBuyController">
+<div ng-controller="ToBuyController as tobuy">
 	<ul>
 		<h3>To Buy List</h3>
-		<li ng-repeat="item in ToBuyController.tobuyitems">
+		<li ng-repeat="item in tobuy.tobuyitems">
 			Buy {{item.quantity}} {{item.name}}
-			<button ng-click="ToBuyController.removetobuy($index);">Bought</button>
+			<button ng-click="tobuy.removetobuy($index);">Bought</button>
 		</li>
 	</ul>
-	<div ng-if="ToBuyController.tobuyitems.length==0"><p>Everything bought!!!</p></div>
+	<div ng-if="tobuy.tobuyitems.length==0"><p>Everything bought!!!</p></div>
 </div>
-<div ng-controller="ShoppingListController2 as AldreadyBoughtController">
+<div ng-controller="AldreadyBoughtController as bought">
 	<ul>
 		<h3>Aldready Bought</h3>
-		<li ng-repeat="item in AldreadyBoughtController.boughtitem">
+		<li ng-repeat="item in bought.boughtitem">
 			Bought {{item.quantity}} {{item.name}}
 		</li>
 	</ul>
-	<div ng-if="AldreadyBoughtController.boughtitem.length==0"><p>Nothing bought yet!!!</p></div>
+	<div ng-if="bought.boughtitem.length==0"><p>Nothing bought yet!!!</p></div>
 </div>
 </body>
 </html>
