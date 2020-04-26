@@ -2,11 +2,11 @@
 'use strict';
 
 angular.module('MenuApp')
-  .component('categories', {
-    templateUrl: 'src/categoriescomponent.template.html',
-    bindings: {
-      items: '<'
-    }
-  });
+.component('categories', {
+  templateUrl: 'src/categories.html',
+  bindings: {
+    categoriesList: '<'
+  }
+});
 
 })();

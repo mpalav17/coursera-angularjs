@@ -1,14 +1,18 @@
-(function () {
+(function() {
 'use strict';
 
-angular.module('MenuApp',[])
+angular.module('MenuApp')
 .controller('CategoriesController', CategoriesController);
 
-// 'item' is injected through state's resolve
-CategoriesController.$inject = ['categories'];
-function CategoriesController(categories) {
-  var categoriesCtrl = this;
-  categoriesCtrl.categories = categories;
+CategoriesController.$inject = ['categoriesList', '$rootScope'];
+function CategoriesController(categoriesList, $rootScope) {
+  var categoriesCtrlr = this;
+
+  categoriesCtrlr.list = categoriesList;
+
+  $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams) {
+    console.log(event, toState, toParams, fromState, fromParams);
+  });
 }
 
 })();
